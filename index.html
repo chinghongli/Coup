@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coup</title>
+    <img src="logo.png" align="right" width="250px">
+    <h2>Coup</h2>
+</head>
+
+<body topmargin="0" leftmargin="77px" rightmargin="0">
+    <hr align="left" width="360px" color="black" />
+    <div id="closingremarks" style="display: none">
+    Congratulations. Everything is yours now. However, yet, so empty.
+    </div>
+    <div id="everything" style="display: block">
+    <h4>Forgery</h4>
+    <button onclick="forgeClick(1)">Forge</button> Fake Coins: <span id="fcoin">0</span>
+    <br />
+    <button onclick="setupPresser()">Setup Coin Presser</button> Cost: <span id="presserCost">10</span> Fake Coins
+    <p>Current coin presser: <span id="presser">0</span><i><font size="2">&nbsp;&nbsp;&nbsp; ...... (they can break!)</font></i></p>
+    <p>Current automation: <span id="moneypersecond">0</span> fake coins/second </p>
+    <hr align="left" width="360px" color="black" />
+
+    <h4>Commerce</h4>
+    <button onclick="launderClick()">Launder</button> Real Coins: <span id="rcoin">0</span><i><font size="2">&nbsp;&nbsp;&nbsp; ...... (takes 2 fake coins)</font></i>
+    <p>
+        <font size="2.5"><b>Develop a fraudulent network</b></font>
+        <br />
+        <button id="cbutton" onclick="buyComputer()">Buy Computer</button> Cost: 70 Real Coins
+        <br />
+        <button id="rbutton" onclick="buyRouter()">Buy Router</button> Cost: 40 Real Coins
+        <br />
+        <button id="sbutton" onclick="buyServer()">Buy Server</button> Cost: 80 Real Coins
+    </p>
+        <i>
+            <span id="computeravaliability">Please Purchase Computer</span>
+            <div id="computerUpdate" style="display: none"><font size="2" color="FFC300"> -- Computer Upgraded!</font></div>
+        <br />
+        <span id="routeravaliability">Please Purchase Router</span>
+            <div id="routerUpdate" style="display: none"><font size="2" color="FFC300"> -- Router Upgraded</font></div>
+        <br />
+        <span id="serveravaliability">Please Purchase A Server</span>
+            <div id="serverUpdate" style="display: none"><font size="2" color="FFC300"> -- Server Enhanced!</font></div>
+        <br />
+        </i>
+    <br />
+    <div id="replacelbutton">
+    <button id="lbutton" onclick="enables()">Launch Fraudulent Scheme</button>
+    </div>
+    <div id="fsl" style="display: none">
+    <b>Fraudulent Scheme Launched!</b>
+    </div>
+    <p>
+        Real coins generated: <span id="coinpersecond">0</span> real coins/second
+    </p>
+    
+    <div id="showupgrades" style="display: none">
+    <button id="ucbutton" onclick="upgradeComputer()">Upgrade Computer</button> Cost: 150 Real Coins <br />
+    <button id="urbutton" onclick="upgradeRouter()">Upgrade Router</button> Cost: 90 Real Coins <br />
+    <button id="usbutton" onclick="upgradeServer()">Upgrade Server</button> Cost: 200 Real Coins <br />
+    </div>
+
+    <div id="showorganise" style="display: none">
+    <hr align="left" width="360px" color="black" />
+    <h4>Organise</h4>
+    
+    <button onclick="buyPeasant()">Buy Peasant</button>
+    <button onclick="buySmallArmy()">Form Small Army</button>
+    <button onclick="buyArmouredDivision()">Bribe Armoured Division</button>
+    <p>
+        Cost Of Peasant: 60 Real Coin<br />
+        Cost Of Forming Small Army: 150 Real Coin<br />
+        Cost Of Bribing Armoured Divison: 350 Real Coin<br />
+    </p>
+        --- Owned Peasants: <span id="showPeasant">0</span><br />
+        --- Owned Small Army: <span id="showArmy">0</span><br />
+        --- Owned Armoured Divion: <span id="showDivision">0</span><br />
+    <br />
+        <font size="2.5"><b>Organise Coup Opportunities:</b></font>
+    <p>
+        <button onclick="orgProtest()">Arrange Protest</button>
+        Requires: 10 Peasants
+        <br />
+        <button onclick="orgRevolution()">Plan Revolution</button>
+        Required: 15 Peasants and 4 Small Armies
+        <br />
+        <button onclick="orgCivilWar()">Plot Civil War</button>
+        Requires: 20 Peasants, 10 Small Armies and 5 Armoured Divisions
+        <br />
+    </p>
+        <font size="2.5"><b>Avaliable Attacks:</b></font>
+    <p>
+        Protests: <span id="avaliableprotests">0</span> Avaliable <br />
+        Revolutions: <span id="avaliablerevolutions">0</span> Avaliable <br />
+        Civil Wars: <span id="avaliablecivilwars">0</span> Avaliable
+    </p>
+    <hr align="left" width="360px" color="black" />
+    <h4>Coup</h4>
+        
+        <!-- THIS IS ANTARCTICA-->
+        
+        <font style="color: blue">Antarctica:</font> <font style="color: dimgray">Current Civilisation - </font><span id="antHealth">43</span>/43
+        
+        ........ <div id="antbutton" style="display: inline-block">
+        <button onclick="antProtest()">Protest</button>
+        <button onclick="antRevolution()">Start Revolution</button>
+        <button onclick="antCivilWar()">Start Civil War</button>
+        </div>
+        <div id="antvictory" style="display: none">Antarctica Is Yours!</div>
+        
+        <!-- THIS IS AFRICA -->
+        <br />
+        
+        <font style="color: saddlebrown">Africa:</font> <font style="color: dimgray">Current Civilisation - </font><span id="afrHealth">76</span>/76
+        
+        ........ <div id="afrbutton" style="display: inline-block">
+        <button onclick="afrProtest()">Protest</button>
+        <button onclick="afrRevolution()">Start Revolution</button>
+        <button onclick="afrCivilWar()">Start Civil War</button>
+        </div>
+        <div id="afrvictory" style="display: none">Africa Is Yours!</div>
+        
+        <!-- THIS IS ASIA-->
+
+        <br />
+        
+        <font style="color: red">Asia:</font> <font style="color: dimgray">Current Civilisation - </font><span id="asiHealth">156</span>/156
+        
+        ........ <div id="asibutton" style="display: inline-block">
+        <button onclick="asiProtest()">Protest</button>
+        <button onclick="asiRevolution()">Start Revolution</button>
+        <button onclick="asiCivilWar()">Start Civil War</button>
+        </div>
+        <div id="asivictory" style="display: none">Asia Is Yours!</div>
+        
+        <!-- THIS IS EUROPE-->
+        
+        <br />
+        
+        <font style="color: mediumblue">Europe:</font> <font style="color: dimgray">Current Civilisation - </font><span id="eurHealth">121</span>/121
+        
+        ........ <div id="eurbutton" style="display: inline-block">
+        <button onclick="eurProtest()">Protest</button>
+        <button onclick="eurRevolution()">Start Revolution</button>
+        <button onclick="eurCivilWar()">Start Civil War</button>
+        </div>
+        <div id="eurvictory" style="display: none">Europe Is Yours!</div>
+        
+        <!-- THIS IS NORTH AMERICA-->
+        
+        <br />
+        
+        <font style="color: deeppink">North America:</font> <font style="color: dimgray">Current Civilisation - </font><span id="norHealth">179</span>/179
+        
+        ........ <div id="norbutton" style="display: inline-block">
+        <button onclick="norProtest()">Protest</button>
+        <button onclick="norRevolution()">Start Revolution</button>
+        <button onclick="norCivilWar()">Start Civil War</button>
+        </div>
+        <div id="norvictory" style="display: none">North America Is Yours!</div>
+        
+        <!-- THIS IS SOUTH AMERICA-->
+        
+        <br />
+        
+        <font style="color: green">South America:</font> <font style="color: dimgray">Current Civilisation - </font><span id="souHealth">66</span>/66
+        
+        ........ <div id="soubutton" style="display: inline-block">
+        <button onclick="souProtest()">Protest</button>
+        <button onclick="souRevolution()">Start Revolution</button>
+        <button onclick="souCivilWar()">Start Civil War</button>
+        </div>
+        <div id="souvictory" style="display: none">South America Is Yours!</div>
+        
+        <!-- THIS IS OCEANIA-->
+        
+        <br />
+        
+        <font style="color: darkorange">Oceania:</font> <font style="color: dimgray">Current Civilisation - </font><span id="oceHealth">79</span>/79
+        
+        ........ <div id="ocebutton" style="display: inline-block">
+        <button onclick="oceProtest()">Protest</button>
+        <button onclick="oceRevolution()">Start Revolution</button>
+        <button onclick="oceCivilWar()">Start Civil War</button>
+        </div>
+        <div id="ocevictory" style="display: none">Oceania Is Yours!</div>
+        
+    </div>
+    </div>
+    <script src="Clicker.js"></script>
+    
+</body>
+
+</html>
