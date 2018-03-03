@@ -102,7 +102,7 @@
             }
             if (rcoin >= 80) {
                 server = ++server;
-                rcoin = rcoin - 40;
+                rcoin = rcoin - 80;
                 var serveravaliability = (server == 1) ? "Server Avaliable" : "Please Purchase A Server";
                 document.getElementById("serveravaliability").innerHTML = serveravaliability;
                 document.getElementById("rcoin").innerHTML = rcoin;     
